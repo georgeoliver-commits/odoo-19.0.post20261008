@@ -16,3 +16,5 @@ class Libro(models.Model):
         ('tecnico', 'Técnico'),
         ('ensayo', 'Ensayo'),
     ], string='Género')
+
+    tema_ids = fields.Many2many('biblioteca.tema', string='Temas')

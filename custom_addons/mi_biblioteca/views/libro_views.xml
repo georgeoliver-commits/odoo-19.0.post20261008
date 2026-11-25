@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="libro_view_list" model="ir.ui.view">
         <field name="name">biblioteca.libro.list</field>
         <field name="model">biblioteca.libro</field>
@@ -7,7 +8,7 @@
             <list>
                 <field name="name"/>
                 <field name="autor"/>
-                <field name="isbn"/>
+                <field name="tema_ids" widget="many2many_tags"/>
                 <field name="paginas"/>
                 <field name="genero"/>
                 <field name="disponible"/>
@@ -22,13 +23,18 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="autor"/>
-                        <field name="isbn"/>
-                        <field name="fecha_publicacion"/>
-                        <field name="paginas"/>
-                        <field name="genero"/>
-                        <field name="disponible"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="autor"/>
+                            <field name="isbn"/>
+                            <field name="genero"/>
+                        </group>
+                        <group>
+                            <field name="fecha_publicacion"/>
+                            <field name="paginas"/>
+                            <field name="disponible"/>
+                            <field name="tema_ids" widget="many2many_tags"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -43,5 +49,6 @@
 
     <menuitem id="menu_biblioteca" name="Biblioteca"/>
     <menuitem id="menu_libros" name="Libros"
-              parent="menu_biblioteca" action="libro_action"/>
+              parent="menu_biblioteca" action="libro_action" sequence="10"/>
+
 </odoo>
