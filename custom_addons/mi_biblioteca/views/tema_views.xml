@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- LISTA editable de temas -->
     <record id="tema_view_list" model="ir.ui.view">
         <field name="name">biblioteca.tema.list</field>
         <field name="model">biblioteca.tema</field>
@@ -19,7 +18,8 @@
     </record>
 
     <menuitem id="menu_configuracion" name="Configuración"
-              parent="menu_biblioteca" sequence="90"/>
+              parent="menu_biblioteca" sequence="90"
+              groups="group_bibliotecario"/>
     <menuitem id="menu_temas" name="Temas"
               parent="menu_configuracion" action="tema_action" sequence="10"/>
 
