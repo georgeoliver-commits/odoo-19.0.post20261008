@@ -33,9 +33,19 @@
                             <field name="fecha_publicacion"/>
                             <field name="paginas"/>
                             <field name="disponible"/>
-                            <field name="tema_ids" widget="many2many_tags"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Temas" name="temas">
+                            <field name="tema_ids" widget="many2many_tags"/>
+                        </page>
+                        <page string="Préstamos" name="prestamos">
+                            <group>
+                                <field name="num_prestamos"/>
+                            </group>
+                            <field name="prestamo_ids" readonly="1"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
